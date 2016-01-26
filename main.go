@@ -8,15 +8,16 @@ import (
 )
 
 const (
-	HOST_FILE = "C:/Windows/System32/drivers/etc/hosts"
+    GOOLE_HOST = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
+	LOCAL_FILE = "C:/Windows/System32/drivers/etc/hosts"
 )
 
 func main() {
-	resp, _ := http.Get("https://raw.githubusercontent.com/racaljk/hosts/master/hosts")
+	resp, _ := http.Get(GOOLE_HOST)
 	defer resp.Body.Close()
 	body, _ := ioutil.ReadAll(resp.Body)
 	//fmt.Println(string(body))
-	err := ioutil.WriteFile(HOST_FILE, body, 0777)
+	err := ioutil.WriteFile(LOCAL_FILE, body, 0777)
 	if err != nil {
 		fmt.Println(err)
 		return
