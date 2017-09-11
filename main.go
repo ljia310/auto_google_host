@@ -8,7 +8,7 @@ import (
 )
 
 const (
-    GOOLE_HOST = "https://raw.githubusercontent.com/racaljk/hosts/master/hosts"
+    GOOLE_HOST = "https://raw.githubusercontent.com/ljia310/hosts-1/master/hosts-files/hosts"
 	LOCAL_FILE = "C:/Windows/System32/drivers/etc/hosts"
 )
 
